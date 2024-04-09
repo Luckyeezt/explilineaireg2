@@ -51,6 +51,7 @@
         transform: translateY(-5px);
       }
 
+      /* Style des boutons */
       .explic button {
         width: 100%;
         padding: 20px;
@@ -91,11 +92,64 @@
         border-color: #666;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
       }
+
+      #toschool {
+        background-color: #f39c12;
+        padding: 15px 30px;
+        border-radius: 10px;
+        cursor: pointer;
+        border: none;
+        font-weight: bold;
+        margin-top: 10px;
+        color: white;
+        font-size: 16px;
+        transition: opacity 0.3s ease;
+      }
+
+      #toschool:hover {
+        opacity: 0.7;
+      }
+
+      /* Style de l'animation de chargement */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.loading {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.7);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 4px solid #ccc;
+  border-top: 4px solid #f39c12;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
     </style>
   </head>
   <body>
+
+    <div class="loading" id="loading">
+      <div class="loading-spinner"></div>
+    </div>
     <div class="header">
       <h1>Explications Linéaires - Classe 1-G2</h1>
+      <!-- Bouton pour rediriger vers un autre site -->
+      <button onclick="toPage('school')" id="toschool">Aller sur e-lyco</button>
     </div>
 
     <div class="container">
@@ -152,7 +206,7 @@
           </h4>
         </button>
       </div>
-      
+
       <div class="explic">
         <button onclick="toPage(7)">
           <h4>Explication Linéaire 7 : Emile Zola, Nana, 1880.</h4>
@@ -223,10 +277,34 @@
           case 4:
             window.location.href = "explilineaire4.html";
             break;
-          case 12:
-            window.location.href = "explilineaire12.html";
+          case 5:
+            window.location.href = "explilineaire5.html";
+            break;
+          case 6:
+            window.location.href = "explilineaire6.html";
+            break;
+          case 7:
+            window.location.href = "explilineaire7.html";
+            break;
+          case 8:
+            window.location.href = "explilineaire8.html";
+            break;
+          case 9:
+            window.location.href = "explilineaire9.html";
+            break;
+          case 10:
+            window.location.href = "explilineaire10.html";
+            break;
+          case 11:
+            window.location.href = "explilineaire11.html";
+            break;
+          case "school":
+            window.open
+              ("https://carcouet.paysdelaloire.e-lyco.fr/", "_blank");
+            break; // Ajout du break ici
           default:
             window.location.href = "accueil.html";
+            break; // Ajout du break ici
         }
       }
 
@@ -234,17 +312,30 @@
         const pass = document.getElementById("entry").value;
 
         if (pass === "adminaccess") {
-          window.location.href = "explilineaire12.html";
+          window.location.href = "lebaldesfolles.html";
         } else {
           alert("Mot de passe incorrect");
         }
       }
 
-      pass.addEventListener("keyup", function (event) {
-        if (event.keyCode === 13) {
-          verify();
-        }
-      });
+      // Ajout d'un événement sur la touche "Enter" pour le champ de mot de passe
+      document
+        .getElementById("entry")
+        .addEventListener("keyup", function (event) {
+          if (event.key === "Enter") {
+            verify();
+          }
+        });
+
+        window.addEventListener('beforeunload', function() {
+  // Afficher l'élément de chargement
+  document.getElementById('loading').style.display = 'flex';
+});
+
+window.addEventListener('load', function() {
+  // Masquer l'élément de chargement une fois la page chargée
+  document.getElementById('loading').style.display = 'none';
+});
     </script>
   </body>
 </html>
