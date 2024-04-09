@@ -5,77 +5,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        margin: 50px;
-        padding: 20px;
-        background-color: #f9f9f9;
-        color: #333;
-        line-height: 1.6;
-      }
-      pre {
-        font-size: 18px;
-        border: 1px solid #ccc;
-        padding: 20px;
-        background-color: #fff;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        white-space: pre-wrap;
-        font-family: Helvetica;
-      }
-      h1 {
-        text-align: center;
-        color: #666;
-      }
-      #container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-
-      details {
-            background-color: #f9f9f9;
-            padding: 10px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            margin-bottom: 20px;
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          background-color: #f9f9f9;
+          font-size: 18px;
+          color: #333;
+          line-height: 1.6;
         }
-
-        /* Style pour la balise <summary> à l'intérieur de <details> */
+        h1, h2 {
+          text-align: center;
+          color: #666;
+        }
+        pre {
+          font-size: 18px;
+          border: 1px solid #ccc;
+          padding: 20px;
+          background-color: #fff;
+          border-radius: 5px;
+          box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+          white-space: pre-wrap;
+          font-family: Helvetica, sans-serif;
+          line-height: 1.6;
+          overflow-x: auto; /* Permet le défilement horizontal si nécessaire */
+        }
+        #container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin: 20px;
+        }
+        details {
+          background-color: #f9f9f9;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 5px;
+          margin-bottom: 20px;
+          max-width: 800px; /* Limite la largeur du détail pour une meilleure lisibilité */
+          margin: 0 auto; /* Centre le détail horizontalement */
+        }
         summary {
-            font-weight: bold;
-            cursor: pointer;
+          font-weight: bold;
+          cursor: pointer;
         }
-
-        /* Style pour le contenu à l'intérieur de <details> */
         .details-content {
-            margin-top: 10px;
-            padding-left: 20px;
-            border-left: 2px solid #666;
+          margin-top: 10px;
+          padding-left: 20px;
+          border-left: 2px solid #666;
         }
-    </style>
+        @media only screen and (max-width: 600px) {
+          body {
+            font-size: 16px;
+          }
+          pre {
+            font-size: 16px;
+            padding: 10px;
+          }
+        }
+      </style>
   </head>
   <body>
-    <h1>Explication linéaire n°2, de « Homme, es-tu capable » à « pour ne rien dire de plus. »</h1>
-    <h2>Séquence 1 : Olympe de Gouges, Déclaration des droits de la femme et de la citoyenne, 1791</h2>
+    <h1>
+      Explication linéaire n°2, de « Homme, es-tu capable » à « pour ne rien
+      dire de plus. »
+    </h1>
+    <h2>
+      Séquence 1 : Olympe de Gouges, Déclaration des droits de la femme et de la
+      citoyenne, 1791
+    </h2>
+    <button onclick="returnHome()" style="display: block; margin: 20px auto; padding: 10px 20px; font-size: 16px; font-weight: bold; background-color: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer; transition: background-color 0.3s ease;">
+        Retour à l'accueil
+      </button>
 
     <details>
-        <summary>Introduction</summary>
-        <div class="details-content">
-            <p>
-               Alors que la Révolution Française n'a apporté que peu de progrès pour le droit des femmes, Olympe de Gouges,
-               portée par les idéaux des Lumiètes, pionnère emblématique de la lutte pour les droits des femmes, rédige en 1791
-               <i>la Déclaration des droits de la femme et de la citoyenne</i> calquée sur la Déclaration des droits de l'homme et 
-               du citoyen de 1789.
-               <br>
-               Après une dédicace à la reine, Olympe de Gouges s'inscrit dans uen tonalité polémique en s'adressant aux hommes pour les pousser 
-               à s'interroger sur la légitimité de la place qu'ils occupent dans la société les plaçant alors face à ses responsabilités.
-            </p>
-        </div>
+      <summary>Introduction</summary>
+      <div class="details-content">
+        <p>
+          Alors que la Révolution Française n'a apporté que peu de progrès pour
+          le droit des femmes, Olympe de Gouges, portée par les idéaux des
+          Lumiètes, pionnère emblématique de la lutte pour les droits des
+          femmes, rédige en 1791
+          <i>la Déclaration des droits de la femme et de la citoyenne</i>
+          calquée sur la Déclaration des droits de l'homme et du citoyen de
+          1789.
+          <br />
+          Après une dédicace à la reine, Olympe de Gouges s'inscrit dans uen
+          tonalité polémique en s'adressant aux hommes pour les pousser à
+          s'interroger sur la légitimité de la place qu'ils occupent dans la
+          société les plaçant alors face à ses responsabilités.
+        </p>
+      </div>
     </details>
 
     <div id="container">
-        <pre>
+      <pre>
 Homme, es-tu capable d’être juste ? C’est une femme qui t’en fait la question ; tu ne lui 
 ôteras pas du moins ce droit. Dis-moi ? Qui t’a donné le souverain empire d’opprimer mon 
 sexe ? Ta force ? Tes talents ? Observe le créateur dans sa sagesse ; parcours la nature dans 
@@ -95,5 +119,11 @@ intellectuelles ; il prétend jouir de la Révolution, et réclamer ses droits �
 rien dire de plus.
         </pre>
     </div>
+
+    <script>
+            function returnHome() {
+      window.location.href = "index.html";
+    }
+    </script>
   </body>
 </html>
