@@ -110,42 +110,10 @@
         opacity: 0.7;
       }
 
-      /* Style de l'animation de chargement */
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-.loading {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.7);
-  z-index: 9999;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.loading-spinner {
-  width: 50px;
-  height: 50px;
-  border: 4px solid #ccc;
-  border-top: 4px solid #f39c12;
-  border-radius: 50%;
-  animation: spin 1s linear infinite;
-}
-
     </style>
   </head>
   <body>
 
-    <div class="loading" id="loading">
-      <div class="loading-spinner"></div>
-    </div>
     <div class="header">
       <h1>Explications Linéaires - Classe 1-G2</h1>
       <!-- Bouton pour rediriger vers un autre site -->
@@ -326,16 +294,6 @@
             verify();
           }
         });
-
-        window.addEventListener('beforeunload', function() {
-  // Afficher l'élément de chargement
-  document.getElementById('loading').style.display = 'flex';
-});
-
-window.addEventListener('load', function() {
-  // Masquer l'élément de chargement une fois la page chargée
-  document.getElementById('loading').style.display = 'none';
-});
     </script>
   </body>
 </html>
